@@ -16,7 +16,7 @@ Before each service upgrade, Salesforce automatically runs all Apex tests in you
 
 ### Test method syntax
 
-    @isTest static void `test method name()` {
+    @isTest static void `test method name`() {
         ... `code to execute`
     }
 
