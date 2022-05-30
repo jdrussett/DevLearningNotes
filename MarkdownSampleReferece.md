@@ -81,3 +81,9 @@ Create a code block by indenting:
 Create a horizontal rule with three dashes:
 
 ---
+
+Add an in-line hyperlink: [Google.com](https://www.google.com)
+
+Include an image in markdown:
+
+![This is alternative text to the image if doesn't load...? maybe](/Resources/Image%20Resources/Git_Notes_image1.png "Optional title of included image file")
