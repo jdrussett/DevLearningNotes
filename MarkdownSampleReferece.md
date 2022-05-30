@@ -87,3 +87,13 @@ Add an in-line hyperlink: [Google.com](https://www.google.com)
 Include an image in markdown:
 
 ![This is alternative text to the image if doesn't load...? maybe](/Resources/Image%20Resources/Git_Notes_image1.png "Optional title of included image file")
+
+Adding a sample table:
+
+| Column A is left-aligned (default) | Column B is right-aligned | Column C is center-aligned |
+| --- | ---: | :---: |
+| Value A1 | Value B1 | Value C1 |
+| Value A2 | Value B2 | Value C2 |
+| **Value A3 is bolded** | *Value B3 is italicized* | Value C3 contains special characters \| \# |
+| Value A4 is a link to (trailhead.salesforce.com) [https://trailhead.salesforce.com] | Value B4 | `Value C4 is some code` |
+| This is | The final row | Of the table |
