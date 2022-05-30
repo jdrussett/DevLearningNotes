@@ -16,11 +16,11 @@ Markdown syntax reference: https://www.markdownguide.org/basic-syntax/
 
 ###### Heading 6 (smallest)
 
-Paragraph one. Separate from the next paragraph with more than one space.
+Paragraph one. Separate from the next paragraph with more than one carriage return.
 
 Paragraph two.
 
-Inserting line break - ending this line with two or more spaces.  
+Inserting line break - ending this line with two or more spaces, and beginning next text on a new line.  
 New line.
 
 **Bolded text**  
@@ -33,6 +33,7 @@ Block quote exhibited below:
 Nested block quote exhibited below:
 > outer block quote
 >> inner block quote
+>
 > continuing the outer block quote
 
 Paragraphing with block quotes:
