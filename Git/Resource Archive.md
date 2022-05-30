@@ -2,6 +2,8 @@
 
 ## Articles/Sources
 
+---
+
 - [How to "git pull" from master into development branch](https://stackoverflow.com/questions/20101994/git-pull-from-master-into-the-development-branch)
 - [How to push multiple branches from multiple commits](https://stackoverflow.com/questions/13000563/how-to-push-multiple-branches-from-multiple-commits)
 - [How to rename a local git branch](https://stackoverflow.com/questions/6591213/how-do-i-rename-a-local-git-branch)
@@ -20,6 +22,8 @@
 - [git-rm](https://git-scm.com/docs/git-rm)
 
 ## YouTube Sources
+
+---
 
 - [Learn Git In 15 Minutes watched](https://www.youtube.com/watch?v=USjZcfj8yxE) *watched*
 - [Git & GitHub Crash Course For Beginners watched](https://www.youtube.com/watch?v=SWYqp7iY_Tc) *watched*

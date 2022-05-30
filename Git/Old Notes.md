@@ -113,6 +113,8 @@ Git repository structure:
 
 ## From Salesforce
 
+---
+
 ### One-Time Configurations
 
 | **Git Command** | **Command Function** |
