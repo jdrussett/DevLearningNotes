@@ -2,6 +2,8 @@
 
 ## General
 
+---
+
 Apex tests are critical for quality assurance and are required for deploying and distributing Apex from a sandbox to a production org
 
 Before each service upgrade, Salesforce automatically runs all Apex tests in your org for you via a process called Apex Hammer
