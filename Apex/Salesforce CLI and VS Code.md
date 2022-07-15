@@ -115,7 +115,12 @@ Right-click on classes, click deploy source to org (set org default first)
 
 **Salesforcedx-vscode-apex > Java: home** is the path where your java runtime is installed to launch the Apex Lanugage Server (needed for apex replay debugger)
 
-`Ctrl + /` comments out a line of Apex in VS Code
+### Keyboard Shortcuts
+
+| **Keyboard Shortcut** | **Function** |
+| --- | --- |
+| `Ctrl + /` | comments out a line of Apex in VS Code |
+| `Ctrl + Shift + K` | deletes line |
 
 ## Git Commands
 
