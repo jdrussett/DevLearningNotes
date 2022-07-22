@@ -6,31 +6,27 @@
 
 SOQL stands for "Salesforce Object Query Language"
 
-Can pass a SOQL statement inside square brackets to dynamically create a list/collection of records resulting from the SOQL query
-
-- Example:
+- Can pass a SOQL statement inside square brackets to dynamically create a list/collection of records resulting from the SOQL query
+  - Example:
 
         Contact[] SmithContacts = [SELECT Id FROM Contact WHERE LastName='Smith'];
-
-- Referred to as "inline SOQL"
+  - Referred to as "inline SOQL"
 
 *Basic syntax of any SOQL query*:
 
     Select [fields] From [object_name] Where [optional_conditional_filters];
 
-- Separate fields, if multiple, with commas
-- Separate conditions, if multiple, with boolean operators
-  - can use parentheses to use nested operators as well
+> Separate fields, if multiple, with commas
+>
+> Separate conditions, if multiple, with boolean operators
+>> can use parentheses to use nested operators as well
 
-No `Select *` option in SOQL to select all fields from an object; have to specify each field you want to query explicitly
-
-Don't need to specify ID field in any SOQL query; always returned automatically with any SOQL query
-
-SOQL supports wildcard characters with the LIKE operator in queries
-
-- `%` wildcard matches any or no additional characters in a string
-- `_` wildcard matches exactly one character in a string
-- Example:
+- No `Select *` option in SOQL to select all fields from an object; have to specify each field you want to query explicitly
+- Don't need to specify ID field in any SOQL query; always returned automatically with any SOQL query
+- SOQL supports wildcard characters with the LIKE operator in queries
+  - `%` wildcard matches any or no additional characters in a string
+  - `_` wildcard matches exactly one character in a string
+  - Example:
 
         Select name From Account Where name Like 'SFDC%';
         Select email_address__c From Contact Where email_address__c Like '%@fnni.com';

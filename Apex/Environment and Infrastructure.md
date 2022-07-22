@@ -4,8 +4,8 @@
 
 ---
 
-An Apex **class** is like a file; contains code in a tangible location  
-An Apex **method** is a section of a class that does something useful
+> An Apex **class** is like a file; contains code in a tangible location
+>> An Apex **method** is a section of a class that does something useful
 
 - Method names always have to be followed by `()`, regardless of whether any parameters are passed to the method or not
 - Call a method by using dot notation to access the method from the class and optionally passing parameters \(inside `()`\) required
@@ -26,7 +26,7 @@ Apex allows you to make calls to and integrate Apex code with *external web serv
 - To make a callout from a trigger, call a class method that executes asynchronously
   - A **future method** is annotated with `@future(callout=true)`
 
-Can save up to 6 MB of Apex code in each org (not counting test methods)
+> Can save up to 6 MB of Apex code in each org (not counting test methods)
 
 ## Access Modifiers
 
@@ -44,11 +44,11 @@ Different Access modifiers that are available for use:
 
 The `with sharing` keyword specifies that sharing rules for the current user *should* be taken into account for an Apex class
 
-> Note, this almost always *restricts* data more than it grants additional visibility
+- Note, this almost always *restricts* data more than it grants additional visibility
 
 By default, Apex executes in `system context`, meaning the code has access to all objects, fields, and records in the org
 
-> Object permissions, field-level security, sharing rules are *not applied* for the current user by default
+- Object permissions, field-level security, sharing rules are *not applied* for the current user by default
 
 ## User Interface API
 

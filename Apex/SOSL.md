@@ -6,30 +6,25 @@
 
 SOSL stands for "Salesforce Object Search Language"
 
-SOSL is a search language used to perform text searches in records
-
-- Use to search fields across multiple standard & custom object records in Salesforce
-
-Can embed SOSL queries in Apex code just like you can SOQL
-
-- Example: SOSL query that searches for accounts and contacts that have any fields with the word 'SFDC'
+- SOSL is a search language used to perform text searches in records
+  - Use to search fields across multiple standard & custom object records in Salesforce
+- Can embed SOSL queries in Apex code just like you can SOQL
+  - Example: SOSL query that searches for accounts and contacts that have any fields with the word 'SFDC'
 
         List<List<SObject>> searchList = [FIND 'SFDC' IN ALL FIELDS RETURNING Account(Name), Contact(FirstName,LastName)];
 
-**SOSL can query all objects in Salesforce at once!**
+> **SOSL can query all objects in Salesforce at once!**
 
 SOSL matches fields based on word match
 
-In Query Editor & the API, search query in SOSL must be surrounded by curly braces, but in Apex code it is surrounded by single quotes
+- In Query Editor & the API, search query in SOSL must be surrounded by curly braces, but in Apex code it is surrounded by single quotes
+- *Can specify the following in each SOSL search query*:
+  - Text expression - single word or phrase - to search for
+  - Scope of fields to search
+  - List of objects & fields to retrieve
+  - Conditions for selecting rows in source objects
 
-*Can specify the following in each SOSL search query*:
-
-- Text expression - single word or phrase - to search for
-- Scope of fields to search
-- List of objects & fields to retrieve
-- Conditions for selecting rows in source objects
-
-Basic syntax:
+*Basic syntax:*
 
 - In Apex:
 
@@ -54,7 +49,10 @@ Adding search group parameter with `In` in a query is optional; if left out the 
 - Phone Fields
 - Sidebar Fields
 
-Objects & fields parameter is also optional in SOSL queries; specifies information to return in a search result: list of one or more sObjects with each one or more fields, with optional values to filter against
+Objects & fields parameter is also optional in SOSL queries
+
+- specifies information to return in a search result
+  - list of one or more sObjects with each one or more fields, with optional values to filter against
 
 > If not specified, default is to return IDs of all object records found
 

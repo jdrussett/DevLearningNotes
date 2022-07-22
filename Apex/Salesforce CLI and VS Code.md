@@ -10,11 +10,11 @@
 - `sfdx force:auth:web:login` authorizes an org
   - To reassign a new org as the default, include `-s` at end of line; the org you login to will become the default
   - Parameter `-r` or `--instanceurl` is instance URL, or specific URL you have to log into org from (i.e. for restricted sandbox)
-  - ``--setalias `[alias_name]` `` sets an alias of the name you provide for the org you're about to log into to authorize
+  - ``--setalias `alias_name` `` sets an alias of the name you provide for the org you're about to log into to authorize
 - `sfdx force --help` provides help on functions syntax
 - `sfdx force:doc:commands:list` shows all available sfdx commands
 - `sfdx force:alias` manages user name aliases
-  - ``sfdx force:alias:set `[newAlias]`=`[username@domain.com]` `` will set a new alias for an org with an existing username
+  - ``sfdx force:alias:set `newAlias`=`username@domain.com` `` will set a new alias for an org with an existing username
 - `sfdx commands` lists all commands
 - `sfdx force:org:delete` deletes a scratch org tied to a Dev Hub org
   - *Probably* have to specify web address of org (value) or alias given
@@ -23,25 +23,25 @@
   - Pass alias at end of line to specify which to open, if not default
 - `sfdx force:source:push` pushes all local source code into the default org
 - `sfdx force:source:pull` pulls all metadata from default org into local project directory
-  - Note: ignores changes made to objects/entities defined in `.forceignore` file (denoted by ``**/`[object to ignore]` ``)
-- ``sfdx force:project:create -n `[project_name]` `` creates folder called [project_name] and scaffolds new project with all assets in proper folder structure
+  - Note: ignores changes made to objects/entities defined in `.forceignore` file (denoted by ``**/`object to ignore` ``)
+- ``sfdx force:project:create -n `project_name` `` creates folder called project_name and scaffolds new project with all assets in proper folder structure
   - `-s` option indicates you want a scratch org you create to be default org for project when running SF CLI commands
 
     > Use different org other than default: specify -u argument and another org alias
 
   - `-f` option indicates path to the project scratch org configuration file when creating scratch org
-- ``sfdx force:data:record:create -s `[salesforce object API name]` -v `[list, in double quotes, of field-value pairs, in single quotes & delimited by a space]` `` creates data record in scratch org in given object you specified
-- ``sfdx force:data:record:delete -s `[salesforce object API name]` -w `[list, in double quotes, of conditional field values to direct deletion, in single quotes & delimited by a space]` `` deletes data record from scratch org from object you specified & according to criteria you specified
-- ``sfdx force:data:tree:export -q `[SOQL query, in double quotes]` --outputdir ./`[directory]` `` --> will gather data from default scratch org using query you specified & store it in .json file in directory location you specified
-- ``sfdx force:data:tree:import --`[sObjectTreeFiles]` `[directory]`/`[.json file]` `` will import data into default scratch org pulled from data source specified with directory and `.json` file
-- ``sfdx force:apex:class:create -n `[class/controller name]` -d `[directory location]` `` creates new apex class with given name in given directory location
-- ``sfdx force:lightning:event:create -n `[event name]` -d `[directory location]` `` --> creates new aura event with given name in given directory location
-- ``sfdx force:lightning:component:create -n `[aura component name]` -d `[directory location]` `` creates new aura component bundle with given name in given directory location
-- ``sfdx force:org:create -f config/project-scratch-def.json -a `[org name]` `` creates a new scratch org with given name
-- ``sfdx force:user:permset:assign -n `[name of permission set]` -u `[name of org]` `` assign a permission set to default user in a scratch org/specified org
-- ``sfdx force:org:display -u `[org name]` `` will show configuration data for an org you specify
-- ``sfdx force:user:password:generate -u `[org name]` `` --> will automatically generate random strong password for default user for org you specify (scratch only?)
-- ``sfdx force:mdapi:convert -r `[folder containing metadata]`/`` converts all metadata into source format, stores in default folder location
+- ``sfdx force:data:record:create -s `salesforce object API name` -v `list, in double quotes, of field-value pairs, in single quotes & delimited by a space` `` creates data record in scratch org in given object you specified
+- ``sfdx force:data:record:delete -s `salesforce object API name` -w `list, in double quotes, of conditional field values to direct deletion, in single quotes & delimited by a space` `` deletes data record from scratch org from object you specified & according to criteria you specified
+- ``sfdx force:data:tree:export -q `SOQL query, in double quotes` --outputdir ./`directory` `` will gather data from default scratch org using query you specified & store it in .json file in directory location you specified
+- ``sfdx force:data:tree:import --`sObjectTreeFiles` `directory`/`.json file` `` will import data into default scratch org pulled from data source specified with directory and `.json` file
+- ``sfdx force:apex:class:create -n `class/controller name` -d `directory location` `` creates new apex class with given name in given directory location
+- ``sfdx force:lightning:event:create -n `event name` -d `directory location` `` creates new aura event with given name in given directory location
+- ``sfdx force:lightning:component:create -n `aura component name` -d `directory location` `` creates new aura component bundle with given name in given directory location
+- ``sfdx force:org:create -f config/project-scratch-def.json -a `org name` `` creates a new scratch org with given name
+- ``sfdx force:user:permset:assign -n `name of permission set` -u `name of org` `` assign a permission set to default user in a scratch org/specified org
+- ``sfdx force:org:display -u `org name` `` will show configuration data for an org you specify
+- ``sfdx force:user:password:generate -u `org name` `` will automatically generate random strong password for default user for org you specify (scratch only?)
+- ``sfdx force:mdapi:convert -r `folder containing metadata`/`` converts all metadata into source format, stores in default folder location
 - `sfdx force:package:create` creates new Salesforce DX package
 
     > Can specify:
@@ -64,22 +64,22 @@
     > - Directory containing package contents following `-d`
     > - Installation key protecting package from being installed by unauthorized individuals following `-k`
 
-- ``sfdx force:package:version:promote -p `[package name]` -v `[development hub org alias]` `` promote a package to "released" status
+- ``sfdx force:package:version:promote -p `package name` -v `development hub org alias` `` promote a package to "released" status
 - `sfdx force:source:retrieve` retrieves metadata from org & saves it in local repository
-  - Specify ``-u `[sandbox_name]` `` and ``-m ApexClass:`[class_name]` `` to push particular class
+  - Specify ``-u `sandbox_name` `` and ``-m ApexClass:`class_name` `` to push particular class
   - For multiple Apex classes at once, surround in quotes & separate by commas
   - Example:
 
-        sfdx force:source:retrieve -u [sandbox_name] -m "ApexClass:[class_name1], ApexClass:[class_name2]"
+        sfdx force:source:retrieve -u `sandbox_name` -m "ApexClass:`class_name1`, ApexClass:`class_name2`"
 
-  - Executing simply ``sfdx force:source:retrieve -u `[sandbox_name]` -m ApexClass`` will retrieve all Apex class from org at once
-  - ``sfdx force:source:retrieve -u `[sandbox_name]` -x ./package.xml`` will retrieve the metadata referenced in a `package.xml` file from the org and add the metadata files to the `force-app` folder
+  - Executing simply ``sfdx force:source:retrieve -u `sandbox_name` -m ApexClass`` will retrieve all Apex class from org at once
+  - ``sfdx force:source:retrieve -u `sandbox_name` -x ./package.xml`` will retrieve the metadata referenced in a `package.xml` file from the org and add the metadata files to the `force-app` folder
 - `sfdx force:source:deploy` pushes metadata from local repository to Salesforce org
-  - Specify ``-u `[sandbox_name]` `` and ``-m ApexClass:`[class_name]` `` to push particular class
+  - Specify ``-u `sandbox_name` `` and ``-m ApexClass:`class_name` `` to push particular class
   - For multiple Apex classes at once, surround in quotes & separate by commas
   - Example:
 
-        sfdx force:source:deploy -u [sandbox_name] -m "ApexClass:[class_name1], ApexClass:[class_name2]"
+        sfdx force:source:deploy -u `sandbox_name` -m "ApexClass:`class_name1`, ApexClass:`class_name2`"
 
   - Executing simply ``sfdx force:source:deploy -u `[sandbox_name]` -m ApexClass`` will deploy all Apex class to org at once
 - `sfdx force:limits:api:display` allows you to view your org's metadata limits for working with sfdx/dev ops model
@@ -98,22 +98,18 @@
 
 ---
 
-Command palette tricks (summon with Ctrl + Shift + P):
+- Command palette tricks (summon with Ctrl + Shift + P):
+  - SFDX: Get Apex Debug Logs
+  - SFDX: Execute Anonymous Apex with Editor Comments
+  - SFDX: Create a Project
+  - Terminal: Select Default Shell
+- Right-click on classes, click deploy source to org (set org default first)
+- **Apex replay debugger**: first turn on debugging, then run apex tests, get debug logs, set breakpoints/checkpoints in code, open apex replay debugger with current log file, all that stuff
 
-- SFDX: Get Apex Debug Logs
-- SFDX: Execute Anonymous Apex with Editor Comments
-- SFDX: Create a Project
-- Terminal: Select Default Shell
+    > Check out trailhead module on apex replay debugger for more help  
 
-Right-click on classes, click deploy source to org (set org default first)
-
-**Apex replay debugger**: first turn on debugging, then run apex tests, get debug logs, set breakpoints/checkpoints in code, open apex replay debugger with current log file, all that stuff
-
-> Check out trailhead module on apex replay debugger for more help  
-
-**Terminal > Integrated: Cwd** is the setting that specifies the default directory/file path when you open a terminal in VS Code
-
-**Salesforcedx-vscode-apex > Java: home** is the path where your java runtime is installed to launch the Apex Lanugage Server (needed for apex replay debugger)
+- **Terminal > Integrated: Cwd** is the setting that specifies the default directory/file path when you open a terminal in VS Code
+- **Salesforcedx-vscode-apex > Java: home** is the path where your java runtime is installed to launch the Apex Lanugage Server (needed for apex replay debugger)
 
 ### Keyboard Shortcuts
 
@@ -139,4 +135,4 @@ Right-click on classes, click deploy source to org (set org default first)
 - `-s` option indicates you want a scratch org you create to be default org for project when running SF CLI commands
   - Use different org other than default: specify `-u` argument and another org alias
 - `-f` option indicates path to the project scratch org configuration file when creating scratch org
-- ``mkdir `[directory name]` `` creates a directory/folder within current project directory
+- ``mkdir `directory name` `` creates a directory/folder within current project directory

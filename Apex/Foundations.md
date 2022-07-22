@@ -12,13 +12,14 @@ Access fields on objects with dot notation
 
 - Example: `account_variable.Name__c`
 
-Can loop through a list by creating temporary container variable on an object (i.e. for (Account acct : acctlist){})
-> Apex is case-insensitive!
-Apex supports methods on objects, like JavaScript
+Can loop through a list by creating temporary container variable on an object (i.e. for `(Account acct : acctlist){}`)
 
 - i.e. `list_variable.add(new_element)`, `string_variable.length()`, etc.
 
-Apex code can only be written from scratch in a sandbox org, not in a production org
+> Apex is case-insensitive!
+> Apex supports methods on objects, like JavaScript
+
+Apex code can *only be written from scratch in a sandbox org*, not in a production org
 
 - Must be deployed to production from a sandbox
 
@@ -73,8 +74,8 @@ Database methods return result objects containing success/failure information fo
 
 - Upsert returns `Database.UpsertResult` array of result objects, delete returns `Database.DeleteResult` array of result objects
 
-`.isSuccess()` method on a database class result list will return only records in the list that succeeded in the operation
+Database class methods to interact with the results of a database operation:
 
-`.getId()` method gets IDs of records in a database class result list
-
-`.getErrors()` method gets errors of failed records in a database class result list
+- `.isSuccess()` method on a database class result list will return only records in the list that succeeded in the operation
+- `.getId()` method gets IDs of records in a database class result list
+- `.getErrors()` method gets errors of failed records in a database class result list

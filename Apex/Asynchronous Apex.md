@@ -25,7 +25,7 @@ Various types of asynchronous Apex exist:
 | **Queueable Apex** | Similar to future methods, provide additional job chaining, allow more complex data types to be used | Performing sequential processing operations with external web services |
 | **Scheduled Apex** | Schedule Apex to run at a specified time | Daily/weekly tasks |
 
-Governor/execution limits are increased with asynchronous Apex  
+> Governor/execution limits are increased with asynchronous Apex  
 
 Platform uses queue-based asynchronous processing framework; used to manage asynchronous requests for multiple orgs within each instance
 
@@ -35,9 +35,8 @@ Platform uses queue-based asynchronous processing framework; used to manage asyn
 > 2. Persistence - request is persisted; stored in persistent storage for failure recovery & to provide transactional capabilities
 > 3. Dequeue - request is removed from queue & is processed; transaction management occurs in this step
 
-Can't use `getContent()` or `getContentAsPDF()` methods in any future Apex method
-
-Future classes must be annotated with `@future(callout=true)` and must be static and only return type of void
+- Can't use `getContent()` or `getContentAsPDF()` methods in any future Apex method
+- Future classes must be annotated with `@future(callout=true)` and must be static and only return type of void
 
 ## Batch Apex
 
@@ -90,7 +89,7 @@ Including `Database.Stateful` in class definition lets you maintain state across
 
 ---
 
-Called by System.enqueueJob() method
+Called by `System.enqueueJob()` method
 
 - Returns job ID you can monitor
 
@@ -102,7 +101,7 @@ Queueable Apex syntax:
        }
     }
 
-Testing queueable Apex incorporates the startTest() and stopTest() methods just like testing batch Apex does
+Testing queueable Apex incorporates the `startTest()` and `stopTest()` methods just like testing batch Apex does
 
 > Use `Test.isRunningTest()` to see if Apex is running when testing queueable Apex
 

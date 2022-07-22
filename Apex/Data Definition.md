@@ -56,7 +56,7 @@ Can declare new sObject with fields populated dynamically by passing field value
 
 ### sObject Data Type
 
-This is any data type in Apex that represents a record of a standard or custom object type in Salesforce
+> This is any data type in Apex that represents a record of a standard or custom object type in Salesforce
 
 - i.e. an `Account` sObject, or a `Candidate__c` object
 

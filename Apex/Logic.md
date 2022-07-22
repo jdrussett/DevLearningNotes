@@ -6,7 +6,7 @@
 
 Use try-catch handling to catch and handle possible error conditions
 
-Format:
+*Format:*
 
     try {
         … code to execute that you want to succeed …
@@ -20,13 +20,13 @@ Format:
 
 ### For Loops
 
-For loop traditional format:
+*For loop traditional format:*
 
     for (Integer [count_var] = 0; [count_var] < n; [count_var] ++) {
        … code to execute …
     }
 
-For loop iteration container format:
+*For loop iteration container format:*
 
     for ([data_type] [looping_var] : [iteration_collection]) {
        … code to execute …
@@ -36,9 +36,9 @@ For loop iteration container format:
 
 ### While Loops
 
-Checks condition before loop starts
+> Checks condition before loop starts
 
-Format:
+*Format:*
 
     while ([condition]) {
        … code to execute …
@@ -46,9 +46,9 @@ Format:
 
 ### Do-While Loops
 
-Checks condition after loop starts (always runs at least once)
+> Checks condition after loop starts (always runs at least once)
 
-Format:
+*Format:*
 
     Do {
        … code to execute …
@@ -56,7 +56,7 @@ Format:
 
 ## If-Else Statements
 
-Format:
+*Format:*
 
     if ([condition1]) {
        … code to execute …
@@ -66,9 +66,9 @@ Format:
 
 ## Switch Statements
 
-Provide an alternative to if-else statements, if condition is fairly simple
+> Provide an alternative to if-else statements, if condition is fairly simple
 
-Format:
+*Format:*
 
     switch on [expression_or_variable]{
        when [value1] {
