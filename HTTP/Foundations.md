@@ -4,7 +4,7 @@
 
 ---
 
-HTTP methods:
+*HTTP methods:*
 
 | Method Name | Description |
 | --- | --- |
@@ -13,7 +13,7 @@ HTTP methods:
 | `DELETE` | Deletes resource identified by a URL |
 | `PUT` | Creates/replaces a resource sent in a request body |
 
-Error results:
+*Error results:*
 
 | Error Result | Description |
 | --- | --- |
