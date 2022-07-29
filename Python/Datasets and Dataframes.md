@@ -27,32 +27,24 @@ To work with data using pandas library, data must be in format of **dataframe**;
   - `.sample()` - random row of a dataframe
   - `.count()` - counts number of rows in a dataframe
   - `.mad()` - mean absolute deviation of a column in a dataframe
+- Access columns of a data frame with bracket notation; pass a list of columns to access multiple columns at once
+  - Accessing a column with single brackets returns a series
+  - Accessing a column with double brackets returns a dataframe; even if only single column is specified
+  - Stores values of columns and row indices
 
-Access columns of a data frame with bracket notation; pass a list of columns to access multiple columns at once
+  > Can access multiple consecutive rows/columns of data frame with slice notation
+- Take filtered subset of a dataframe by specifying qualification criteria as part of bracket notation; nested bracket notation
+  - Example:
 
-- Accessing a column with single brackets returns a series
-- Accessing a column with double brackets returns a dataframe; even if only single column is specified
-- Stores values of columns and row indices
+            dataframe_subset = dataframe[dataframe[column] == some criteria]
 
-Can access multiple consecutive rows/columns of data frame with slice notation
+  - Could also use `dataframe.column` to set equal to some criteria
+- `loc[]` function selects subset of dataframe by specifying range of rows using slice notation and list of columns with list notation
+- `iloc[]` function selects subset of dataframe by specifying range of rows using slice notation and range of columns using slice notation
 
-Take filtered subset of a dataframe by specifying qualification criteria as part of bracket notation; nested bracket notation
-
-- Example:
-
-        dataframe_subset = dataframe[dataframe[column] == some criteria]
-
-- Could also use `dataframe.column` to set equal to some criteria
-
-`loc[]` function selects subset of dataframe by specifying range of rows using slice notation and list of columns with list notation
-
-`iloc[]` function selects subset of dataframe by specifying range of rows using slice notation and range of columns using slice notation
-
-Dataframe is in **long form** when each column is a variable & each row represents non-repeated data; also referred to as unstacked/record form
-
-Dataframe is in **wide form** when each variable is in a different column; also referred to as stacked
-
-**Pivoting** converts data from long to wide form
+> - Dataframe is in **long form** when each column is a variable & each row represents non-repeated data; also referred to as unstacked/record form
+> - Dataframe is in **wide form** when each variable is in a different column; also referred to as stacked
+> - **Pivoting** converts data from long to wide form
 
 `Pandas.pivot()` method will take a subset of a dataframe and create a pivoted data frame based on arguments passed
 
@@ -61,7 +53,7 @@ Dataframe is in **wide form** when each variable is in a different column; also 
 - **columns** specifies column values of original dataframe to serve as columns of pivoted dataframe
 - **values** specifies column values of original dataframe to serve as values of pivoted dataframe
 
-**Melting** converts data from wide to long form
+> **Melting** converts data from wide to long form
 
 `Pandas.melt()` method will take a wide form dataframe or subset and convert it into a long form dataframe/subset
 

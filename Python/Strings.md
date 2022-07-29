@@ -39,9 +39,8 @@ Common conversion specifiers:
 
 ---
 
-`Split()` function will split a string into many different substrings depending on which delimiting character or expression you pass & create a list of the results
-
-`Strip()` function returns a copy of the string you pass it with leading and trailing whitespaces removed
+- `Split()` function will split a string into many different substrings depending on which delimiting character or expression you pass & create a list of the results
+- `Strip()` function returns a copy of the string you pass it with leading and trailing whitespaces removed
 
 ## String Methods
 
@@ -84,23 +83,20 @@ Methods on strings that create strings based on strings inputted:
 
 ---
 
-**Cool note**: if you apply the multiplication operator to a string it will print that string back to back by the number of times you specify
+> **Cool note**: if you apply the multiplication operator to a string it will print that string back to back by the number of times you specify
+>
+> - Example:
+>
+>        user_value = 'XO'
+>        user_value * 5 = XOXOXOXOXO
 
-- Example:
+- Individual string characters read using bracket notation
+- Slice notation reads multiple consecutive characters of a string, passing starting and ending index values
+  - Ending index not included
+  - Example:
 
-        user_value = 'XO'
-        user_value * 5 = XOXOXOXOXO
+            my_string = 'Hello world'
+            my_string[4:7] = 'o w'
 
-Individual string characters read using bracket notation
-
-Slice notation reads multiple consecutive characters of a string, passing starting and ending index values
-
-- Ending index not included
-- Example:
-
-        my_string = 'Hello world'
-        my_string[4:7] = 'o w'
-
-- Optional third parameter `stride`: included after colon after ending index, determines width of increment
-
-If looping over a string, have to use `range(len([string]))` to cause the loop to iterate over each character in the string
+  - Optional third parameter `stride`: included after colon after ending index, determines width of increment
+- If looping over a string, have to use `range(len([string]))` to cause the loop to iterate over each character in the string

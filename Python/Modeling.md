@@ -4,11 +4,9 @@
 
 ---
 
-`scipy.stats.linregress()` function takes `x` and `y` arguments & creates simple linear regression equation
-
-`.corr()` method on a dataframe will calculate correlation coefficients for the numerical variables & output correlation matrix
-
-`pearsonr()` (Pearson correlation coefficient function) takes two arguments (arrays or dataframes) & outputs Pearson correlation coefficient & correspondign two-tailed p-value
+- `scipy.stats.linregress()` function takes `x` and `y` arguments & creates simple linear regression equation
+- `.corr()` method on a dataframe will calculate correlation coefficients for the numerical variables & output correlation matrix
+- `pearsonr()` (Pearson correlation coefficient function) takes two arguments (arrays or dataframes) & outputs Pearson correlation coefficient & correspondign two-tailed p-value
 
 Multiple regression model example:
 

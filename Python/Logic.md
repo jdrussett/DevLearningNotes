@@ -20,11 +20,10 @@
 
 > need a colon to punctuate the line & begin the loop
 
-While loops supported for statements that repeat until condition is no longer true
+- While loops supported for statements that repeat until condition is no longer true
+  - Example:
 
-- Example:
-
-        while `variable` `relational operator` `conditional statement`:
+            while `variable` `relational operator` `conditional statement`:
 
 **For loops** supported for specified number of iterations of a statement to execute
 
@@ -43,9 +42,8 @@ While loops supported for statements that repeat until condition is no longer tr
             for x in list:
                 ...
 
-`Enumerate()` function yields new tuple for each iteration of a loop containing both the index and value of a list iterating over
-
-If looping over a string, have to use ``range(len([`string`]))`` to cause the loop to iterate over each character in the string
+- `Enumerate()` function yields new tuple for each iteration of a loop containing both the index and value of a list iterating over
+- If looping over a string, have to use ``range(len([`string`]))`` to cause the loop to iterate over each character in the string
 
 ## If-Else Statements
 
@@ -64,14 +62,12 @@ If-else statements written with syntax:
 > For code to execute, no ending punctuation required to end line
 > Can have multiple `Elif` clauses in one `if-else` statement
 
-Key for if-else statements is *indentation*; indentation puts line of code within parent logical statement
-
-**Conditional expressions** are like inverted if-else statements with only two branches printed next to each other on same line
-
-- Format is: ``expression if true` if `condition checked` else `expression if false` ``
-- Good practice is to restrict usage to assignment statements only
-  - Example:
+- Key for if-else statements is *indentation*; indentation puts line of code within parent logical statement
+- **Conditional expressions** are like inverted if-else statements with only two branches printed next to each other on same line
+  - Format is: ``expression if true` if `condition checked` else `expression if false` ``
+  - Good practice is to restrict usage to assignment statements only
+    - Example:
 
             y = 5 if (x <= `test_value`) else 0
 
-    > only condition can have parentheses around it, only `expression if true` can contain `"object of interest = "`
+    > Only condition can have parentheses around it, only `expression if true` can contain `"object of interest = "`
