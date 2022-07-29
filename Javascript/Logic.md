@@ -4,13 +4,13 @@
 
 ---
 
-Format is:
+*Format:*
 
     for (before loop iteration; condition for loop; execute after loop) {
         // code to execute during each loop iteration
     }
 
-Types of loops:
+### Types of Loops
 
 - **for loop** - most common way to create a loop in JavaScript
   - Example:
@@ -36,7 +36,7 @@ Types of loops:
 
 ---
 
-Format is:
+*Format:*
 
     if (`condition to execute code`) {
         // code to execute if condition evaluates to true
@@ -44,14 +44,13 @@ Format is:
         // code to execute if condition evaluates to false
     }
 
-Conditions have a Boolean answer (either true or false)
-
-- Condition examples:
-  - `if (x > 0)`
-  - `if (name == 'Bob')`
-  - `if (x == y)`
-  - `if (x != 5)`
-  - `if (x != null)`
+- Conditions have a Boolean answer (either true or false)
+  - Condition examples:
+    - `if (x > 0)`
+    - `if (name == 'Bob')`
+    - `if (x == y)`
+    - `if (x != 5)`
+    - `if (x != null)`
 
 ## Switch Statements
 
@@ -79,7 +78,7 @@ Conditions have a Boolean answer (either true or false)
 - `value1` and `value2` are values of the variable controlling the switch statement that act as conditions
   - i.e. can be case `(name=='John'):`, or case `(num==4):`, etc.
 - A switch trick: switch on the value `true` so the cases can be conditional - that is, based on whether a condition is true (and so matches the switch) or false
-- For example:
+  - For example:
 
         var weight = 135
         switch(true) {

@@ -4,33 +4,25 @@
 
 ---
 
-`var` defines most common variable in Javascript
-
-- Can be reassigned but only accessed within a function
-- Variables defined with `var` move to top when code is executed
-  - Example: ``var `[variable name]` =`[ variable value]` ``
-    - `= ""` will declare an empty string
-    - `= 0` will declare an empty numeric value
-
-`const` defines variable that cannot be reassigned
-
-- Not accessible before it appears within the code
-
-`let` defines variable similar to const
-
-- Can be reassigned, cannot be re-declared
-
-To define a new numeric variable out of a string variable, use a plus sign in the definition
-
-- Example: `` `[numeric_var]` = + `[string_var]` ``
-
-`` `[variable_name]` += `[number or string]` `` will add a number or string (whatever specified to the right of `+=`) to the variable, compounding it each time the variable iterates (used within a loop)
+- `var` defines most common variable in Javascript
+  - Can be reassigned but only accessed within a function
+  - Variables defined with `var` move to top when code is executed
+    - Example: ``var `[variable name]` =`[ variable value]` ``
+      - `= ""` will declare an empty string
+      - `= 0` will declare an empty numeric value
+- `const` defines variable that cannot be reassigned
+  - Not accessible before it appears within the code
+- `let` defines variable similar to const
+  - Can be reassigned, cannot be re-declared
+- To define a new numeric variable out of a string variable, use a plus sign in the definition
+  - Example: `` `[numeric_var]` = + `[string_var]` ``
+- `` `[variable_name]` += `[number or string]` `` will add a number or string (whatever specified to the right of `+=`) to the variable, compounding it each time the variable iterates (used within a loop)
 
 ## Data Types
 
 ---
 
-Different data types in JavaScript:
+*Different data types in JavaScript:*
 
 | **Data Type** | **Example** |
 | --- | --- |
@@ -44,8 +36,6 @@ Different data types in JavaScript:
 | **Array** | Generic container for elements of given data type |
 
 ### Strings
-
-Common text/character defined object
 
 #### Escape Characters
 
@@ -61,7 +51,7 @@ Common text/character defined object
 
 #### String Methods
 
-Use a method on an array by appending it to the end of the string variable name with *dot notation*:
+- Use a method on an array by appending it to the end of the string variable name with *dot notation*:
 
 | **String Method** | **Description** |
 | --- | --- |
@@ -83,23 +73,20 @@ Use a method on an array by appending it to the end of the string variable name 
 | `.toUpperCase()` | Convert strings to upper case |
 | `.valueOf()` | Returns primitive value (that has no properties or methods) of a string |
 
-`` `[string_name]`.substring(`[number1]`, `[number2]`)`` will return the characters in a string specified by the two numbers
-
-- Includes the first number but does not include the second number
-- Example:
+- `` `[string_name]`.substring(`[number1]`, `[number2]`)`` will return the characters in a string specified by the two numbers
+  - Includes the first number but does not include the second number
+  - Example:
 
         var Matt = "Straetker";
         Matt.substring(0,6);
 
-- will return `"Straet"`
-- `Matt[0:5]` would have returned `"Straet"` as well
-
-`` `[string_name]`.slice(`[startpoint]`, `[endpoint]`)`` will return the characters from a specified start and end of a string
-
-- Again, will include first index number but *not* the second one
-- Not specifying an end will cause the count to continue through the entire rest of the string
-- If the entered number is negative, it will count the characters backwards starting at the end of the string
-- Example:
+  - will return `"Straet"`
+  - `Matt[0:5]` would have returned `"Straet"` as well
+- `` `[string_name]`.slice(`[startpoint]`, `[endpoint]`)`` will return the characters from a specified start and end of a string
+  - Again, will include first index number but *not* the second one
+  - Not specifying an end will cause the count to continue through the entire rest of the string
+  - If the entered number is negative, it will count the characters backwards starting at the end of the string
+  - Example:
 
         var dinner = "Chicken Tortellini Alfredo"
         dinner.slice(0,7) == "Chicken"
@@ -108,20 +95,17 @@ Use a method on an array by appending it to the end of the string variable name 
 
 ### Arrays
 
-`[]` defines array in Javascript
-
-- Example: `var fruits = ["apple", "banana", "orange"];`
-- Populate array with elements that can be strings, integers, other arrays, etc.
-- Blank array can be declared as `var arrayname = [];`
-- Indexing begins at 0 in JavaScript
-
-Get the *i*th element with bracket notation; i.e. `array_name[i]`
-
-`` `[array_name]`.length`` gets the length of an array
+- `[]` defines array in Javascript
+  - Example: `var fruits = ["apple", "banana", "orange"];`
+  - Populate array with elements that can be strings, integers, other arrays, etc.
+  - Blank array can be declared as `var arrayname = [];`
+  - Indexing begins at 0 in JavaScript
+- Get the *i*th element with bracket notation; i.e. `array_name[i]`
+- `` `[array_name]`.length`` gets the length of an array
 
 #### Array Methods
 
-Use a method on an array by appending it to the end of the array variable name with *dot notation*
+- Use a method on an array by appending it to the end of the array variable name with *dot notation*
 
 | **Array methods** | Description |
 | --- | --- |
@@ -147,13 +131,12 @@ Use a method on an array by appending it to the end of the array variable name w
 
 #### Setting Dates
 
-`date()` creates new date object with current date and time
-
-- Can surround date in quotes, will declare it as a string
-  - Example: `date("2020-07-27")`
-- Can create custom date object by passing in seven parameters; year, month, day, hour, minute, second, millisecond
-  - Example: `date(2020, 7, 27, 11, 35, 0, 0)`
-  - Can omit any of the parameters except year and month
+- `date()` creates new date object with current date and time
+  - Can surround date in quotes, will declare it as a string
+    - Example: `date("2020-07-27")`
+  - Can create custom date object by passing in seven parameters; year, month, day, hour, minute, second, millisecond
+    - Example: `date(2020, 7, 27, 11, 35, 0, 0)`
+    - Can omit any of the parameters except year and month
 
 #### Pulling Date/Time Values
 

@@ -10,15 +10,17 @@
 2. An **event listener** – a function AppStudio makes that listens for a click on the control
 3. An **event handler** – code written that will run when the event happens to the control; the event listener detects the initiation of the control, and runs the control in response
 
-Examples of common control events:
+> Examples of common control events:
+>
+> - `.onclick`
+> - `.mouseover`
+> - `.onload`
+> - `.onchange`
+> - `.onfocusout`
 
-- `.onclick`
-- `.mouseover`
-- `.onload`
-- `.onchange`
-- `.onfocusout`
+### Radio Buttons
 
-**Radio Buttons** - when you need to pick one from a group. Checkboxes about the same.
+*When you need to pick one from a group (checkboxes about the same):*
 
 - `onclick` - to see if control has been clicked
 - `onchange` - to see if one particular radio button has been clicked
@@ -28,7 +30,9 @@ Examples of common control events:
 - `length` - number of items in list
 - `value` - index of current selection (starts at 0)
 
-**Dropdown** - shows lists of links; user can pick one (or multiples).
+### Dropdown
+
+*Shws lists of links; user can pick one (or multiples):*
 
 - When the control is initially clicked, an event is sent; When the user makes a selection, onclick is called again with the text of the selection; Can have horizontal or vertical display (property)
 - ``addItem(`item`, `type`)`` - type is divider, checked, or disabled
@@ -39,14 +43,18 @@ Examples of common control events:
 - selection - the value of the item selected
 - value - get/set title of the dropdown button
 
-**Listgroup** - very similar to dropdown; Again, the first click on the control triggers onclick (sending an object); the second click is the selection.
+### Listgroup
+
+*Very similar to dropdown; again, the first click on the control triggers onclick (sending an object); the second click is the selection:*
 
 - ``addItem(`item`, `type`, `appearance`)``  where `type` is `'active'` or `'disabled'`; `appearance` is `default`, `success`, `info`, `warning`, `danger`; always adds to the end of the list.
 - `clear`() - clears all item choices
 - `items` - items to show, one per line; * disabled, > selected
 - `length` - number of items in list
 
-**Select** - has a header and footer like many other Bootstrap controls. Shows text that user chooses; developer can also assign behind the scenes values to each choice (eg. a price).
+### Select
+
+*Has a header and footer like many other Bootstrap controls. Shows text that user chooses; developer can also assign behind the scenes values to each choice (eg. a price):*
 
 - User can pick multiple items.
   - Use the `.onchange` or `.onfocusout` events.
@@ -59,13 +67,17 @@ Examples of common control events:
 - length - number of items on the list
 - size - number of rows to display
 
-**Breadcrumbs** - this is a neat feature for navigation. It shows the user how they got to where they are. The crumbs are links to forms.
+### Breadcrumbs
 
-- uses an array of form names in single quotes (Example: `['form1','form2']`)
+*This is a neat feature for navigation. It shows the user how they got to where they are. The crumbs are links to forms:*
+
+- uses an array of form names in single quotes (Example: `'form1','form2'`)
 - length - number of items in the list of forms
 - setValue(array) - resets the list of form names at runtime
 
-**Hamburger** - just like a dropdown control. Two `onclick` events happen when a Hamburger is clicked. When the control is initially clicked, an event is sent. When the user makes a selection, `onclick` is called again with the text of the selection.
+### Hamburger
+
+*Just like a dropdown control. Two `onclick` events happen when a Hamburger is clicked. When the control is initially clicked, an event is sent. When the user makes a selection, `onclick` is called again with the text of the selection:*
 
 - To put a Hamburger on the left, set style to `float:left`; and `align:left`;
 - ``addItem(`item`, `type`)`` to add items at runtime
@@ -74,13 +86,21 @@ Examples of common control events:
 - length - number of menu items in menu
 - selection - what the user selected
 
-**input** with `inputtype` = date - gives a calendar dropdown on the input box.
+### Input
 
-**nav** - different ways to have tabs
+With `inputtype` = date - gives a calendar dropdown on the input box
 
-**modal** - popup you can design
+### Nav
 
-**NSB.MsgBox** is like an alert but specific to AppStudio
+Different ways to have tabs
+
+### Modal
+
+Popup you can design
+
+### NSB.MsgBox
+
+Like an alert but specific to AppStudio
 
 ## Database Language
 
