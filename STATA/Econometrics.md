@@ -1,0 +1,60 @@
+# Econometrics
+
+- Summary/descriptive statistics:
+  - `sum [variable 1] [variable 2] ...`
+- Correlation between 2 (or more) variables
+  - `corr [variable 1] [variable 2] ...`
+- Regression equation/OLS
+  - `reg [dependent variable] [independent variable 1] [independent variable 2] ...`
+- Creating error terms (of a regression model)
+  - `predict error, r`
+- Breusch-Pagan Test (after regression)
+  - `hettest`
+- White's Test (after regression)
+  - `imtest, white`
+- White's correction
+  - `[regression input], robust`
+- Check for multicollinearity (after robust regression)
+  - `vif`
+- Testing joint hypothesis between `X1i` and `X2i`
+  - `test [X1i] [X2i]`
+- Creating logged variable
+  - `gen [new variable name] = ln([old variable name])`
+- Creating histogram to examine distribution of a variable
+  - `hist [variable name]`
+- Sorting data set according to a variable
+  - `sort [variable name]`
+- Creating interaction term between two variables
+  - `reg [dependent variable] i.[dummy variable]##c.[continuous variable]`
+- Creating dummy variables out of a single column specifying different entities (fixed effects)
+  - `xi:regress [dependent variable] [independent variable 1] ... i.[independent variable, coded entity column]`
+- Creating dummy variables out of a single column specifying different time periods (fixed effects)
+  - `xi:regress [dependent variable] [independent variable 1] ... i.[independent variable, coded time period column]`
+- Probit/logit
+  - `probit/or/logit [dependent binary variable] [independent variable 1] ... , robust`
+- Marginal effects (after running probit or logit)
+  - `mfx`
+- Tobit regression with upper/lower limit
+  - `tobit [dependent variable] [independent variable 1] ... , ll(α), ul(β)` *(can do one or both limits)*
+- Ordered logit or probit
+  - `ologit/or/oprobit [dependent variable] [independent variable 1] ... , robust`
+- Multinomial logit or probit
+  - `mlogit/or/mprobit [dependent variable] [independent variable 1] ... , robust`
+- Poisson regression
+  - `poisson [dependent variable] [independent variable 1] ... , robust`
+- Negative binomial regression
+  - `nbreg [dependent variable] [independent variable 1] ... , robust`
+- 2 SLS regressions (instrumental variables)
+  - `ivreg Y Xexogenous (Xendogenous = IVs), robust first`
+  - `xi: ivreg Y Xexogenous (Xendogenous = IVs) i.year, robust first`
+  - `xi: ivlogit Y Xexogenous (Xendogenous = IVs) i.year, robust first`
+- Creating lagged variable
+  - `gen [variable name] = "(in)dependent variable[_n-#]`
+    - \# = number of period lags
+    - Make sure to sort by year prior to creating log
+    - To log appropriately between many entities, include `by [entity]:` before generating lag (if you have a panel data set)
+- Computing BIC/AIC (after running time series)
+  - `estat ic`
+    - Lowest BIC/AIC values are preferred
+- Granger Test (same as previous test for joint significance)
+  - `test [xj lag p] [xi lag p-1]`
