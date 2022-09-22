@@ -27,3 +27,30 @@
   - If provided key is not mapped to a value, `get()` method returns null
 - ``Date.newInstance(`yyyy`, `mm`, `dd`)`` function will define a date data point in Apex
 - `Integer.valueOf()` returns the integer value of another data type like a string or a generic object
+- Here is an example of looping through data locally with a map and performing dynamic value replacement with a map:
+
+        List<LLC_BI__Entity_Compliance__c> ecList = [
+            select id, name, LLC_BI__Age__c, LLC_BI__Entity__c, LLC_BI__HMDA_Applicant_Type__c, LLC_BI__HMDA_Credit_Score__c,
+                LLC_BI__HMDA_Credit_Scoring_Model__c, LLC_BI__HMDA_Credit_Scoring_Model_Other__c,
+                LLC_BI__HMDA_Ethnicity_Collection_Method__c, LLC_BI__HMDA_Ethnicity_Other__c, LLC_BI__HMDA_Ethnicity__c,
+                LLC_BI__HMDA_Income__c, LLC_BI__HMDA_Not_Provided__c, LLC_BI__HMDA_Race_Collected__c,
+                LLC_BI__HMDA_Race_Desc_Code_1__c, LLC_BI__HMDA_Race_Desc_Code_27__c, LLC_BI__HMDA_Race_Desc_Code_44__c,
+                LLC_BI__HMDA_Race__c, LLC_BI__HMDA_Sex_Collection_Method__c, LLC_BI__HMDA_Sex__c,
+                LLC_BI__Age_on_Application_Date__c,
+                LLC_BI__Birthdate__c, LLC_BI__HMDA_Application_Date__c, LLC_BI__Is_Ethnicity_Collected_Visually__c,
+                LLC_BI__Is_Manually_Edited__c, LLC_BI__Is_Race_Collected_Visually__c, LLC_BI__Is_Sex_Collected_Visually__c
+            from LLC_BI__Entity_Compliance__c
+        ];
+        System.debug(ecList.size());
+        Map<String, String> MyMap = new Map<String, String>{
+            'Collected on the basis of visual observation or surname' => '1',
+            'Not collected on the basis of visual observation or surname' => '2',
+            'Not applicable' => '3',
+            'No co-applicant' => '4'
+        };
+        for (LLC_BI__Entity_Compliance__c ec : ecList) {
+            if (MyMap.containsKey(ec.LLC_BI__HMDA_Ethnicity_Collection_Method__c)) {
+                ec.LLC_BI__HMDA_Ethnicity_Collection_Method__c = MyMap.get(ec.LLC_BI__HMDA_Ethnicity_Collection_Method__c);
+            }
+        }
+        update ecList;
