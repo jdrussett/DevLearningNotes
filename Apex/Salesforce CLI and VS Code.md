@@ -12,6 +12,8 @@
   - To reassign a new org as the default, include `-s` at end of line; the org you login to will become the default
   - Parameter `-r` or `--instanceurl` is instance URL, or specific URL you have to log into org from (i.e. for restricted sandbox)
   - ``--setalias `alias_name` `` sets an alias of the name you provide for the org you're about to log into to authorize
+- ``sfdx auth:logout -u `org_alias` `` logs out of an authorized org in VS code/removes it from org list
+  - optionally add `-p` flag to avoid having to disable the additional prompt in the console confirming that you want to log out
 - `sfdx force --help` provides help on functions syntax
 - `sfdx force:doc:commands:list` shows all available sfdx commands
 - `sfdx force:alias` manages user name aliases
