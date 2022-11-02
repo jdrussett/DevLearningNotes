@@ -5,6 +5,7 @@
 ---
 
 - `sfdx update` will update salesforce cli to latest version
+- `sfdx whatsnew` will show the current release notes for the most recent salesforce cli release
 - `sfdx force:org:list` shows all connected orgs
   - Adding `--verbose` to end of command shows more information
 - `sfdx force:auth:web:login` authorizes an org
