@@ -33,7 +33,39 @@
 - ``sfdx force:data:record:create -s `salesforce object API name` -v `list, in double quotes, of field-value pairs, in single quotes & delimited by a space` `` creates data record in scratch org in given object you specified
 - ``sfdx force:data:record:delete -s `salesforce object API name` -w `list, in double quotes, of conditional field values to direct deletion, in single quotes & delimited by a space` `` deletes data record from scratch org from object you specified & according to criteria you specified
 - ``sfdx force:data:tree:export -q `SOQL query, in double quotes` --outputdir ./`directory` `` will gather data from default scratch org using query you specified & store it in .json file in directory location you specified
-- ``sfdx force:data:tree:import --`sObjectTreeFiles` `directory`/`.json file` `` will import data into default scratch org pulled from data source specified with directory and `.json` file
+  - can specify `-p` to create a data mapping plan file for queries involving multiple related objects
+  - in each object-specific section of JSON within the plan.json file:
+  
+    > - mark `saveRefs` as `true` if *other* related object records need to find these records as lookup references
+    > - mark `resolveRefs` as `true` if *these* object records need to find lookup references to other related object ids
+
+- ``sfdx force:data:tree:import --sObjectTreeFiles `directory`/`.json file(s)` -u  `destination org alias` `` will import data into default scratch org pulled from data source specified with directory and `.json` file
+
+  - alternatively, can execute command with `-p` flag to deploy data according to a data mapping plan which references several other data files in JSON format
+
+  > a data mapping plan file might look like this:
+  >
+  >     [
+  >       {
+  >         "sobject": "Candidate__c",
+  >         "saveRefs": true,
+  >         "resolveRefs": false,
+  >         "files": [
+  >           "Candidate__cs.json"
+  >         ]
+  >       },
+  >       {
+  >         "sobject": "Candidate_History__c",
+  >         "saveRefs": false,
+  >         "resolveRefs": true,
+  >         "files": [
+  >           "Candidate_History__cs.json"
+  >         ]
+  >       }
+  >     ]
+  >
+  > ... provided the object records reference each other correctly with placeholder IDs/references
+
 - ``sfdx force:apex:class:create -n `class/controller name` -d `directory location` `` creates new apex class with given name in given directory location
 - ``sfdx force:lightning:event:create -n `event name` -d `directory location` `` creates new aura event with given name in given directory location
 - ``sfdx force:lightning:component:create -n `aura component name` -d `directory location` `` creates new aura component bundle with given name in given directory location
