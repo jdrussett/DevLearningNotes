@@ -152,6 +152,8 @@
 | --- | --- |
 | `Ctrl + /` | comments out a line of Apex in VS Code |
 | `Ctrl + Shift + K` | deletes line |
+| `Ctrl + Alt + Arrow up or down` | Expands cursor to multiple lines |
+| `Ctrl + Shift + Arrow up or down` | Copies the line/lines you're on and pastes below |
 
 ## Git Commands
 
