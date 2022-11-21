@@ -117,17 +117,31 @@
         sfdx force:source:deploy -u `sandbox_name` -m "ApexClass:`class_name1`, ApexClass:`class_name2`"
 
   - Executing simply ``sfdx force:source:deploy -u `[sandbox_name]` -m ApexClass`` will deploy all Apex class to org at once
+  - To deploy destructive changes, create a folder called 'destructive' at the highest/root level within the project. In the destructive folder, create two files:
+    - `destructiveChanges.xml`, which is structured exactly like a typcial package.xml file and contains the *content that you want to delete*
+    - `package.xml` which is a **blank package.xml file that will only contain the following contents:**
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <Package xmlns="https://soap.sforce.com/2006/04/metadata">
+          <version>52.0</version>
+        </Package>
+
+  - To deploy the destructive change, run the following command once you have the correct metadata contents defined in your destructiveChanges.xml file: `sfdx force:mdapi:deploy --deploydir .\destructive --targetusername org_alias`
 - `sfdx force:limits:api:display` allows you to view your org's metadata limits for working with sfdx/dev ops model
 
 ## Flags & Abbreviations
 
 ---
 
-| **Abbreviated Flag** | **Full Flag Name** |
-| --- | --- |
-| `-q` | `--query` |
-| `-u` | `--targetusername` |
-| `-r` | `--instanceurl` |
+| **Abbreviated Flag** | **Full Flag Name** | **Command Usage** |
+| --- | --- | --- |
+| `-q` | `--query` | force data tree exports or imports |
+| `-u` | `--targetusername` | any command that affects a Salesforce org |
+| `-r` | `--instanceurl` | authenticating to a new org |
+| `-m` | `--metadata` | force source deploy or retrieve |
+| `-f` | `--sobjecttreefiles` | force data tree exports or imports |
+| `-p` | `--plan` | force data tree exports or imports |
+| `-d` | `--outputdir` | force data tree exports |
 
 ## VS Code
 
