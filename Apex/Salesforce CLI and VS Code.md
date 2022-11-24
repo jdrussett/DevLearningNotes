@@ -117,9 +117,7 @@
         sfdx force:source:deploy -u `sandbox_name` -m "ApexClass:`class_name1`, ApexClass:`class_name2`"
 
   - Executing simply ``sfdx force:source:deploy -u `[sandbox_name]` -m ApexClass`` will deploy all Apex class to org at once
-<<<<<<< HEAD
   - Add flag `--checkonly` to validate a deployment without committing the code to the org
-=======
   - To deploy destructive changes, create a folder called 'destructive' at the highest/root level within the project. In the destructive folder, create two files:
     - `destructiveChanges.xml`, which is structured exactly like a typcial package.xml file and contains the *content that you want to delete*
     - `package.xml` which is a **blank package.xml file that will only contain the following contents** (with whatever current version of the API you are using)
@@ -130,10 +128,7 @@
           </Package>
 
   - To deploy the destructive change, run the following command once you have the correct metadata contents defined in your destructiveChanges.xml file: `sfdx force:mdapi:deploy --deploydir .\destructive --targetusername org_alias`
-
->>>>>>> 1c8d6d1a053549a4b185d066a64c5b5b83bac89e
-
-- `sfdx force:limits:api:display` allows you to view your org's metadata limits for working with sfdx/dev ops model
+  - `sfdx force:limits:api:display` allows you to view your org's metadata limits for working with sfdx/dev ops model
 
 ## Flags & Abbreviations
 
