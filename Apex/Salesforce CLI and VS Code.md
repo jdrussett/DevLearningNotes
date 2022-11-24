@@ -117,6 +117,7 @@
         sfdx force:source:deploy -u `sandbox_name` -m "ApexClass:`class_name1`, ApexClass:`class_name2`"
 
   - Executing simply ``sfdx force:source:deploy -u `[sandbox_name]` -m ApexClass`` will deploy all Apex class to org at once
+  - Add flag `--checkonly` to validate a deployment without committing the code to the org
 - `sfdx force:limits:api:display` allows you to view your org's metadata limits for working with sfdx/dev ops model
 
 ## Flags & Abbreviations
