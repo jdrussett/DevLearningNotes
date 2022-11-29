@@ -15,11 +15,18 @@
 
         listOfFruits.add(4, 'pomegranate')
 
+- `.addAll()` method adds all elements of one list *or set* to another list
 - Can get collection elements with bracket notation (``list_variable[`desired_index`]``) or with `.get()` method
 
     > Indexing begins at 0 in Apex
     >
     >> Example: if variable `colors` is defined as `List<String> colors = new List<String> {'red', 'green', 'blue'}`, then `colors[1]` and `colors.get(1)` will both return `'green'`
+
+---
+---
+> If you are working with maps, and you have a data type for the key set that *can change*, such as an sObject record that might acquire an ID after you insert it, you need to create a **clone** of the map after the final adjustments to the data, specifically the keys, have been made, otherwise you will not be able to find an exact match for the key if a field like ID has been added
+---
+---
 
 - `.size()` method returns the size of a collection or the character count of a string, etc.
 - `.put()` method on a map takes parameters for key and value; adds entries to a map
