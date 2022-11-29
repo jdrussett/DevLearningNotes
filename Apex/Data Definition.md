@@ -80,6 +80,14 @@ A **map** is a collection of key-value pairs where each unique key maps to a sin
 - Keys/values can be any data type and can contain any collection as well as nested collections
   - i.e. can have a map of integers to maps, which map strings to lists, ... etc.
   - Keys can contain up to 4 levels of nested collections
+- You can define a map of IDs to sObjects with a SOQL statement such as: 
+
+      Map<Id, Account> TargetAccountsMap = new Map<Id, Account>(
+        [SELECT Id, Total_Transfers_In__c, Total_Transfers_Out__c, Total_Card_Charges__c, Type
+        FROM Account
+        WHERE Id IN :TargetAccountIds]
+      );
+
 - More help on maps: [https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/langCon_apex_collections_maps.htm](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/langCon_apex_collections_maps.htm)
 
 ### Other Data Types
