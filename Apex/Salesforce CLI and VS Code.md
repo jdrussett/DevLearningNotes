@@ -5,6 +5,7 @@
 ---
 
 - `sfdx update` will update salesforce cli to latest version
+  - `sfdx update -interactive` will let you manually select a version to update to in the terminal
 - `sfdx whatsnew` will show the current release notes for the most recent salesforce cli release
 - check out the [online documentation](https://github.com/salesforcecli/) in github
 - `sfdx force:org:list` shows all connected orgs
