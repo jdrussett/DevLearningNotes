@@ -7,13 +7,16 @@
 - `sfdx update` will update salesforce cli to latest version
   - `sfdx update -interactive` will let you manually select a version to update to in the terminal
 - `sfdx whatsnew` will show the current release notes for the most recent salesforce cli release
+- check out the [online documentation](https://github.com/salesforcecli/) in github
 - `sfdx force:org:list` shows all connected orgs
   - Adding `--verbose` to end of command shows more information
-- `sfdx force:auth:web:login` authorizes an org
+- `sfdx force:org:login:web` authorizes an org
+  - *was previously `sfdx force:auth:web:login`*
   - To reassign a new org as the default, include `-s` at end of line; the org you login to will become the default
   - Parameter `-r` or `--instanceurl` is instance URL, or specific URL you have to log into org from (i.e. for restricted sandbox)
   - ``--setalias `alias_name` `` sets an alias of the name you provide for the org you're about to log into to authorize
-- ``sfdx auth:logout -u `org_alias` `` logs out of an authorized org in VS code/removes it from org list
+- ``sfdx force:org:logout -u `org_alias` `` logs out of an authorized org in VS code/removes it from org list
+  - *was previously `sfdx force:auth:logout`*
   - optionally add `-p` flag to avoid having to disable the additional prompt in the console confirming that you want to log out
 - `sfdx force --help` provides help on functions syntax
 - `sfdx force:doc:commands:list` shows all available sfdx commands
@@ -34,7 +37,7 @@
     > Use different org other than default: specify -u argument and another org alias
 
   - `-f` option indicates path to the project scratch org configuration file when creating scratch org
-- ``sfdx force:data:record:create -s `salesforce object API name` -v `list, in double quotes, of field-value pairs, in single quotes & delimited by a space` `` creates data record in scratch org in given object you specified
+- ``sfdx force:data:record:create --sobjecttype `salesforce object API name` --values `list, in double quotes, of field-value pairs, in single quotes & delimited by a space` `` creates data record in scratch org in given object you specified
 - ``sfdx force:data:record:delete -s `salesforce object API name` -w `list, in double quotes, of conditional field values to direct deletion, in single quotes & delimited by a space` `` deletes data record from scratch org from object you specified & according to criteria you specified
 - ``sfdx force:data:tree:export -q `SOQL query, in double quotes` --outputdir ./`directory` `` will gather data from default scratch org using query you specified & store it in .json file in directory location you specified
   - can specify `-p` to create a data mapping plan file for queries involving multiple related objects
@@ -144,6 +147,8 @@
 | `-f` | `--sobjecttreefiles` | force data tree exports or imports |
 | `-p` | `--plan` | force data tree exports or imports |
 | `-d` | `--outputdir` | force data tree exports |
+| `-s` | `--sobjecttype` | force data record commands |
+| `-v` | `--values` | force data record commands |
 
 ## VS Code
 
