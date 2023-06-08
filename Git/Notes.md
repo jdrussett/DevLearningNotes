@@ -92,11 +92,12 @@
 - ``git checkout `[commit hash]` `` will revert to the state of a previous commit
   - Obtain the commit hash using `git log`
   - The hash is the long string of characters and numbers
-  - Checking out a has actually redirects you to a different branch created to view that old, previous state of your project
+  - Checking out a hash actually redirects you to a different branch created to view that old, previous state of your project
   - `git checkout master` or ``git checkout `[whatever branch you were on before]` `` will take you back to the branch you were on before
   - ``git checkout -b `[new branch name]` `[basis branch name]` `` will create a new branch and check it out, and base it upon another branch you optionally specify
     - Basis for new branch will default to the branch you're currently on, so not necessary if creating off of that branch
   - ``git checkout `[5-character beginning of commit hash ID]` --`[file name(s)]` `` can restore a previously discarded file from a commit where it was present
+- `git checkout <other-branch-name> -- <file-name>` will checkout a file from another branch to the local branch you're currently on
 - `git branch` will list out all existing branches
   - ``git branch `[new branch name]` `` will create a new branch from the current branch you're on with the name you specify
     - Will essentially clone the branch you're on, at the same point in time regarding your commit status
