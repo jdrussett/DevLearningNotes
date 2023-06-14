@@ -141,8 +141,8 @@
 | **Abbreviated Flag** | **Full Flag Name** | **Command Usage** |
 | --- | --- | --- |
 | `-q` | `--query` | force data tree exports or imports |
-| `-u` | `--targetusername` | any command that affects a Salesforce org |
-| `-r` | `--instanceurl` | authenticating to a new org |
+| `-u` | `--target-org` | any command that affects a Salesforce org |
+| `-r` | `--instance-url` | authenticating to a new org |
 | `-m` | `--metadata` | force source deploy or retrieve |
 | `-f` | `--sobjecttreefiles` | force data tree exports or imports |
 | `-p` | `--plan` | force data tree exports or imports |
