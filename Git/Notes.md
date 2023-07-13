@@ -152,6 +152,7 @@
 - ``git remote rename `[current remote repository name]` `[new remote repository name]` `` will change the name of a remote repository in a git project on your local machine
 - ``git branch -m `[old branch name]` `[new branch name]` `` renames a local branch in your local git repository
 - ``git diff `[branch 1]`..`[branch 2]` `` will show the differences between two branches directly related in the branching tree
+- ``git remote add upstream `[online repository name]` `` is a useful command to add the original online repository for an online repository that you forked; add it locally and then you can sync the fork with the upstream original source in Github online
 
 ## Terminal Commands
 
