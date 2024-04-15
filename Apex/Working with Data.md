@@ -61,3 +61,17 @@
             }
         }
         update ecList;
+
+## Advanced Tips & Tricks
+
+- __"Lazy-loading"__ a property in Apex (example):
+
+      private static `data_type` `property_name` {
+        get {
+          if (property_name == null) {
+            // do some stuff to populate it; SOQL query, call another method, etc.
+          }
+          return property_name;
+        }
+        set;
+      }
